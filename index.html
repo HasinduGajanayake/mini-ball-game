@@ -23,10 +23,27 @@
         var dy =-2;
         var dx = 2;
 
+        var ballRadius = 10;
+
         function draw(){
         //code for arc drawing
         ctx.clearRect(0,0, canvas.width, canvas.height);
         drawBall();
+       
+        if(x + dx > canvas.width - ballRadius || x + dx < ballRadius){
+                
+                dx=-dx;
+
+
+        }
+        
+        if(y+ dy > canvas.height - ballRadius || y+dy < ballRadius){
+                
+                dy=-dy;
+
+
+        }
+        
         x+=dx; 
         y+=dy;
         //code for rectangle
@@ -42,8 +59,6 @@
         ctx.stroke();
         ctx.closePath();
         
-       
-
         }
 
         function drawBall(){
